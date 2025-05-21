@@ -4,6 +4,10 @@ Este repositorio contiene la solución implementada para el proyecto final de la
 
 ---
 
+## 👨‍💻 Nombre de la nueva base de datos creada en el servidor
+
+sistema_recargas_viajes_gonzalo_gonzalez_3b
+
 ## ✅ Funcionalidades implementadas
 
 1. **Auditoría del estado de las tarjetas**
