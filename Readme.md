@@ -26,7 +26,7 @@ sistema_recargas_viajes_gonzalo_gonzalez_3b
    - trazabilidad a eventos sensibles.
    - seguimiento y resolución de incidentes.
 
-Porfavor Consulte el [`Analisis De Mejoras`](./Analisis De Mejoras.md)
+Porfavor Consulte el [`Analisis De Mejoras`](Analisis%20De%20Mejoras.md)
 
 ---
 
