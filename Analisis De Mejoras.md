@@ -81,6 +81,7 @@ Almacenar información sobre el dispositivo que validó cada viaje (torniquete, 
 - Crear tabla `validaciones` como entidad intermedia entre `viajes` y `dispositivos`
 
 ### 🗃️ Estructuras propuestas:
+
 ```mermaid
 erDiagram
     VIAJES ||--o{ VALIDACIONES : tiene
@@ -110,4 +111,33 @@ erDiagram
 
 ## 4️⃣ Mejora adicional
 
-**[En desarrollo: definir propuesta técnica y consultas asociadas]**
+### 🛡️ Reportes de pérdida o robo de tarjetas
+En el contexto del sistema de recargas y viajes, uno de los aspectos críticos es la seguridad y el control del uso indebido de tarjetas. Actualmente, el sistema registra cambios de estado de tarjetas, pero no permite conocer la causa o contexto de dichos cambios, como puede ser una pérdida o un robo.
+
+### 🎯 Mejora propuesta:
+Agregar una tabla de reportes_tarjeta, donde se almacene información sobre reportes realizados por los usuarios relacionados con la pérdida, robo u otro incidente con sus tarjetas.
+
+### ✅ Beneficios clave:
+Brinda trazabilidad a eventos sensibles y mejora la respuesta operativa.
+
+Facilita el seguimiento y resolución de incidentes.
+
+Permite generar métricas de seguridad: usuarios con más reportes, tiempos de atención, etc.
+
+Puede conectarse con cambios de estado, activación de nuevas tarjetas o bloqueos.
+
+### 📦 Estructura propuesta de la tabla:
+
+```mermaid
+erDiagram
+    TARJETAS ||--o{ REPORTES_TARJETA : tiene
+
+    REPORTES_TARJETA {
+        int reporte_id PK
+        int tarjeta_id FK
+        string motivo
+        datetime fecha_reporte
+        string estado
+    }
+
+```

@@ -184,6 +184,14 @@ erDiagram
         int tarjeta_id FK
     }
 
+    REPORTES_TARJETA {
+        int reporte_id PK
+        int tarjeta_id FK
+        string motivo
+        datetime fecha_reporte
+        string estado
+    }
+
     %% Relaciones existentes
     USUARIOS ||--o{ TARJETAS : ""
     TARJETAS ||--o{ RECARGAS : ""
@@ -203,6 +211,8 @@ erDiagram
     TARJETAS ||--o{ CAMBIOS_ESTADO_TARJETA : "cambia_estado"
     VIAJES ||--o{ VALIDACIONES : "tiene"
     DISPOSITIVOS ||--o{ VALIDACIONES : "realiza"
+    TARJETAS ||--o{ REPORTES_TARJETA : "reportada_en"
+
 ```
 
 ## 📐 Diagrama ER (esquema original)
