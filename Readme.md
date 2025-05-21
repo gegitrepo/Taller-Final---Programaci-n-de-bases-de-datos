@@ -72,6 +72,7 @@ erDiagram
         int dispositivo_id FK
         datetime fecha_validacion
     }
+```
 
 ## 📐 Diagrama ER (cambios aplicados)
 
@@ -202,6 +203,7 @@ erDiagram
     TARJETAS ||--o{ CAMBIOS_ESTADO_TARJETA : "cambia_estado"
     VIAJES ||--o{ VALIDACIONES : "tiene"
     DISPOSITIVOS ||--o{ VALIDACIONES : "realiza"
+```
 
 ## 📐 Diagrama ER (esquema original)
 
