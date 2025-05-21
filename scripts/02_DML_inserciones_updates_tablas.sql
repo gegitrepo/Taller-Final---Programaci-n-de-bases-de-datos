@@ -1,3 +1,6 @@
+-- Las siguientes on las inserciones o actualizacione de los datos ya existentes en las tablas
+-- para poder eralizar consultas y pruebas de la base de datos.
+
 
 -- Inserciones para tabla promociones
 INSERT INTO promociones (nombre, descripcion, porcentaje_descuento)
@@ -32,6 +35,7 @@ INSERT INTO dispositivos (tipo, ubicacion)
 VALUES ('Dispositivo Portátil', 'Operativo Especial Zona Norte');
 
 select * from viajes;
+
 -- Inserciones para tabla cambios_estado_tarjeta
 INSERT INTO cambios_estado_tarjeta (tarjeta_id, estado_anterior, estado_nuevo, fecha_cambio) VALUES (1, 'inactiva', 'activa', '2024-10-02 16:28:00');
 INSERT INTO cambios_estado_tarjeta (tarjeta_id, estado_anterior, estado_nuevo, fecha_cambio) VALUES (1, 'activa', 'bloqueada', '2024-10-24 11:45:00');
@@ -236,8 +240,8 @@ INSERT INTO validaciones (viaje_id, dispositivo_id, fecha_validacion) VALUES (20
 INSERT INTO validaciones (viaje_id, dispositivo_id, fecha_validacion) VALUES (20, 5, '2025-02-01 18:45:00');
 INSERT INTO validaciones (viaje_id, dispositivo_id, fecha_validacion) VALUES (20, 5, '2025-03-31 07:40:00');
 
---Asignar promociones a registros reales para trabajar acon la tabla promociones
--- Asignar promociones a recargas ya existentes
+--Asignar promociones a registros reales para trabajar aoc la tabla promociones
+
 UPDATE recargas SET promocion_id = 1 WHERE recarga_id = 1;
 UPDATE recargas SET promocion_id = 2 WHERE recarga_id = 2;
 UPDATE recargas SET promocion_id = 3 WHERE recarga_id = 3;
@@ -285,3 +289,26 @@ UPDATE recargas SET promocion_id = 2 WHERE recarga_id = 37;
 UPDATE recargas SET promocion_id = 3 WHERE recarga_id = 38;
 UPDATE recargas SET promocion_id = 4 WHERE recarga_id = 39;
 UPDATE recargas SET promocion_id = 5 WHERE recarga_id = 40;
+
+-- Inserciones para tabla reportes_tarjeta
+
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (1, 'deterioro', '2025-03-12 08:07:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (2, 'pérdida', '2025-02-01 16:00:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (3, 'pérdida', '2024-08-26 16:18:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (4, 'pérdida', '2025-03-03 02:48:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (5, 'pérdida', '2024-06-24 23:38:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (6, 'otro', '2024-12-31 09:05:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (7, 'robo', '2024-09-07 21:09:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (8, 'otro', '2024-11-05 02:14:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (9, 'robo', '2024-11-11 14:29:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (10, 'deterioro', '2025-01-22 15:02:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (11, 'robo', '2025-04-03 13:48:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (12, 'otro', '2024-09-25 10:17:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (13, 'robo', '2024-09-04 11:02:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (14, 'pérdida', '2024-07-11 08:37:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (15, 'pérdida', '2025-04-01 19:27:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (16, 'pérdida', '2024-08-04 11:19:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (17, 'pérdida', '2024-10-02 16:11:00', 'resuelto');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (18, 'robo', '2024-05-30 23:09:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (19, 'robo', '2025-03-14 14:50:00', 'pendiente');
+INSERT INTO reportes_tarjeta (tarjeta_id, motivo, fecha_reporte, estado) VALUES (20, 'pérdida', '2024-07-28 07:49:00', 'resuelto');

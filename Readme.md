@@ -27,12 +27,11 @@ Este repositorio contiene la solución implementada para el proyecto final de la
 
 Todos los scripts se encuentran en la carpeta [`scripts/`](./scripts). Se recomienda ejecutarlos en el siguiente orden:
 
-1. `01_modificaciones_tablas.sql` – Alteraciones necesarias a tablas existentes.
-2. `02_creacion_nuevas_tablas.sql` – Creación de nuevas entidades requeridas.
-3. `03_carga_datos.sql` – Inserción de datos para pruebas (mínimo 100 registros por entidad nueva).
-4. `04_consultas.sql` – Consultas solicitadas para validación de las mejoras.
+1. `01_DDL_creacion_nuevas_tablas.sql` – Alteraciones necesarias a tablas existentes.
+2. `02_DML_modificaciones_tablas.sql` – Creación de nuevas entidades requeridas.
+3. `03_DML_carga_datos.sql` – Inserción de datos para pruebas (mínimo 100 registros por entidad nueva).
+4. `04_DQL_consultas.sql` – Consultas solicitadas para validación de las mejoras.
 
-> Asegúrate de ejecutar los scripts en una base de datos que ya contenga el esquema base original del sistema de recargas y viajes.
 
 ---
 

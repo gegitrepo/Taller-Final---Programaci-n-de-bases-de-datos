@@ -154,3 +154,41 @@ WHERE p.nombre ILIKE '%bonus%'
 GROUP BY u.usuario_id, u.nombre, u.apellido
 ORDER BY total_recargado DESC;
 
+--¿Cuántas recargas por localidad con promociones activas?
+
+SELECT 
+    l.nombre AS localidad,
+    COUNT(*) AS recargas_con_promocion
+FROM recargas r
+JOIN promociones p ON r.promocion_id = p.promocion_id
+JOIN puntos_recarga pr ON r.punto_recarga_id = pr.punto_recarga_id
+JOIN localidades l ON pr.localidad_id = l.localidad_id
+GROUP BY l.nombre
+ORDER BY recargas_con_promocion DESC;
+
+
+-- ¿Que usuarios que han reportado más tarjetas?
+
+SELECT 
+    usuarios.usuario_id,
+    usuarios.nombre,
+    usuarios.apellido,
+    COUNT(*) AS "# Reportes"
+FROM usuarios
+JOIN tarjetas ON usuarios.usuario_id = tarjetas.usuario_id
+JOIN reportes_tarjeta ON tarjetas.tarjeta_id = reportes_tarjeta.tarjeta_id
+GROUP BY usuarios.usuario_id, usuarios.nombre, usuarios.apellido
+ORDER BY "# Reportes" DESC
+LIMIT 10;
+
+--Tarjetas reportadas por motivo y fecha (últimos 6 meses)
+
+SELECT 
+    tarjetas.tarjeta_id,
+    reportes_tarjeta.motivo,
+    reportes_tarjeta.estado,
+    reportes_tarjeta.fecha_reporte
+FROM reportes_tarjeta
+JOIN tarjetas ON reportes_tarjeta.tarjeta_id = tarjetas.tarjeta_id
+WHERE reportes_tarjeta.fecha_reporte >= CURRENT_DATE - INTERVAL '6 months'
+ORDER BY reportes_tarjeta.fecha_reporte DESC;

@@ -1,4 +1,4 @@
---crear la copia de la base de datos en la cual vamos a trabajar
+    --crear la copia de la base de datos en la cual vamos a trabajar
 CREATE DATABASE sistema_recargas_viajes_gonzalo_gonzalez_3b WITH TEMPLATE sistema_recargas_viajes OWNER admin;
 
 --aca comenzamos a crear las tablas nuevas que vamos a implementar en la base de datos
@@ -9,6 +9,12 @@ CREATE TABLE promociones (
     descripcion TEXT,
     porcentaje_descuento FLOAT
 );
+
+-- modificamos la tabla de recargas para incluir la columna promocion_id
+-- y establecer la relación con la tabla promociones
+ALTER TABLE recargas
+ADD COLUMN promocion_id INT REFERENCES promociones(promocion_id);
+
 
 -- Tabla para registrar cambios de estado en tarjetas
 CREATE TABLE cambios_estado_tarjeta (
@@ -33,3 +39,16 @@ CREATE TABLE validaciones (
     dispositivo_id INT NOT NULL REFERENCES dispositivos(dispositivo_id),
     fecha_validacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
+--Punto Final crear la tabla para la propuesta de mejora
+
+CREATE TABLE reportes_tarjeta (
+    reporte_id SERIAL PRIMARY KEY,
+    tarjeta_id INT NOT NULL REFERENCES tarjetas(tarjeta_id),
+    motivo TEXT NOT NULL,
+    fecha_reporte TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estado VARCHAR(20) DEFAULT 'pendiente' -- otros posibles valores: 'resuelto', 'en proceso'
+);
+
+
