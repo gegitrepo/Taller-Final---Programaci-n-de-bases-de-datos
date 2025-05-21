@@ -22,8 +22,11 @@ sistema_recargas_viajes_gonzalo_gonzalez_3b
    - Vinculación de cada viaje con el dispositivo que lo validó.
    - Mejora la trazabilidad y estadísticas operativas.
 
-4. **Mejora adicional propuesta**
-   - [Aquí irá el nombre y descripción de la mejora adicional que definamos.]
+4. **Reportes de pérdida o robo de tarjetas**
+   - trazabilidad a eventos sensibles.
+   - seguimiento y resolución de incidentes.
+
+Porfavor Consulte el [`Analisis De Mejoras`](./Analisis De Mejoras.md)
 
 ---
 
@@ -47,6 +50,7 @@ erDiagram
     RECARGAS ||--o{ PROMOCIONES : usa
     VIAJES ||--o{ VALIDACIONES : se_valida_con
     DISPOSITIVOS ||--o{ VALIDACIONES : valida
+    TARJETAS ||--o{ REPORTES_TARJETA : tiene
 
     CAMBIOS_ESTADO_TARJETA {
         int cambio_id PK
@@ -74,6 +78,14 @@ erDiagram
         int viaje_id FK
         int dispositivo_id FK
         datetime fecha_validacion
+    }
+
+    REPORTES_TARJETA {
+        int reporte_id PK
+        int tarjeta_id FK
+        string motivo
+        datetime fecha_reporte
+        string estado
     }
 ```
 
