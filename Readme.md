@@ -26,7 +26,7 @@ sistema_recargas_viajes_gonzalo_gonzalez_3b
    - trazabilidad a eventos sensibles.
    - seguimiento y resolución de incidentes.
 
-Porfavor Consulte el [`Analisis De Mejoras`](Analisis%20De%20Mejoras.md)
+Porfavor Consulte el [`Analisis De Mejoras`](Analisis%20De%20Mejoras.md) para mayor información.
 
 ---
 
@@ -34,10 +34,9 @@ Porfavor Consulte el [`Analisis De Mejoras`](Analisis%20De%20Mejoras.md)
 
 Todos los scripts se encuentran en la carpeta [`scripts/`](./scripts). Se recomienda ejecutarlos en el siguiente orden:
 
-1. `01_DDL_creacion_nuevas_tablas.sql` – Alteraciones necesarias a tablas existentes.
-2. `02_DML_modificaciones_tablas.sql` – Creación de nuevas entidades requeridas.
-3. `03_DML_carga_datos.sql` – Inserción de datos para pruebas (mínimo 100 registros por entidad nueva).
-4. `04_DQL_consultas.sql` – Consultas solicitadas para validación de las mejoras.
+1. `01_DDL_creacion_nuevas_tablas.sql` – Creación de tablas nuevas y alteraciones necesarias a tablas existentes.
+2. `02_DML_inserciones_updates_tablas.sql` – Inserción de datos para pruebas (mínimo 100 registros por entidad nueva).
+3. `03_DQL_consultas.sql` – Consultas solicitadas para validación de las mejoras.
 
 
 ---
